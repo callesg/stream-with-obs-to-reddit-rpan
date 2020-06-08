@@ -2,4 +2,9 @@
 A script that creates a stream key for reddit rpan. To stream with OBS
 
 ## How to use
-On linux or mac start stream.command it will open your browser and ask you to authorize and then ask for a subredit and a stream title. After you can press "start stream" and a stream will be created and the stream key will be given you you.
+On linux or mac run stream.command it will open your browser and ask you to authorize with reddit, ask for a subredit and a stream title. After you do those things press "start stream" and a stream will be created and the stream key will be given you you. Copy the stream key in to OBS and start streaming.
+
+## OBS settings
+server: rtmp://ingest.redd.it/inbound
+broadcast_height: 854
+broadcast_width: 480
