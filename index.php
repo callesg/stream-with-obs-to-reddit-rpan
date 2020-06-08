@@ -35,12 +35,13 @@ if(isset($_POST['title'])){
 </div>
 <script>
 if(document.location.hash == ""){
+	//request a authorization Bearer token from reddit
 	document.location.href = 'https://www.reddit.com/api/v1/authorize?client_id=ohXpoqrZYub1kg&response_type=token&redirect_uri=http://localhost:65010/callback&scope=*&state=SNOOKEY';
 }else if(document.location.search == ""){
+	//send the resonse from reddit from the broswer back to php by striping the # sign in the url
 	document.location.search = document.location.hash.substr(1);
 }else{
-	document.getElementById('result').innerHTML = '';
-	//document.getElementById('result').innerHTML = document.location.search;
+	//we have our authorization Bearer token and we are done
 }
 </script>
 <form method="post">
