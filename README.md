@@ -6,5 +6,7 @@ On linux or mac run stream.command it will open your browser and ask you to auth
 
 ## OBS settings
 server: rtmp://ingest.redd.it/inbound
+
 broadcast_height: 854
+
 broadcast_width: 480
