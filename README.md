@@ -10,3 +10,7 @@ server: rtmp://ingest.redd.it/inbound
 broadcast_height: 854
 
 broadcast_width: 480
+
+
+## Requirements
+curl and php. OSX has those included from Apple so there is no need to install anything. On linux you will have to install those two pices of software.
