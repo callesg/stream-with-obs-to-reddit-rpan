@@ -17,14 +17,14 @@ if(file_exists('recommended_broadcaster_prompts')){
 if(isset($_POST['title'])){
 	
 	echo("Starting stream:\n");
-	$strem_data = '';
-	exec("curl -d 'title=".$_POST['title']."' -H 'user-agent: Reddit/2020.16.0 (iPhone; iOS 13.3.1; Scale/2.00)' -H 'authorization: Bearer ".$at."' 'https://strapi.reddit.com/r/".$_POST['subredit']."/broadcasts'", $strem_data);
-	$strem_data = implode("\n", $strem_data);
-	$strem_data = json_decode($strem_data, true);
+	$stream_data = '';
+	exec("curl -d 'title=".$_POST['title']."' -H 'user-agent: Reddit/2020.16.0 (iPhone; iOS 13.3.1; Scale/2.00)' -H 'authorization: Bearer ".$at."' 'https://strapi.reddit.com/r/".$_POST['subredit']."/broadcasts'", $stream_data);
+	$stream_data = implode("\n", $stream_data);
+	$stream_data = json_decode($stream_data, true);
 	echo("<p>server: rtmp://ingest.redd.it/inbound</p>\n");
-	echo("<p>stream key: ".$strem_data['data']['streamer_key']."</p>\n");
-	echo("<p>url: ".$strem_data['data']['post']['url']."</p>\n");
-	exec('open '.escapeshellarg($strem_data['data']['post']['url']));
+	echo("<p>stream key: ".$stream_data['data']['streamer_key']."</p>\n");
+	echo("<p>url: ".$stream_data['data']['post']['url']."</p>\n");
+	exec('open '.escapeshellarg($stream_data['data']['post']['url']));
 	passthru("killall php");
 
 }
